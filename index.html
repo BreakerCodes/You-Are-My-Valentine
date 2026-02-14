@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+}
+
+/* Tombol */
+a {
+  padding: 15px 35px;
+  background: white;
+  color: #ff4e8a;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+a:hover {
+  transform: scale(1.1);
+}
+
+/* Bubble */
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  animation: naik linear infinite;
+}
+
+@keyframes naik {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<a href="surat.html">💌 Picitt Tombollnyaa Sayangg</a>
+
+<script>
+function buatBubble() {
+  const bubble = document.createElement("div");
+  bubble.classList.add("bubble");
+
+  let size = Math.random() * 60 + 20;
+  bubble.style.width = size + "px";
+  bubble.style.height = size + "px";
+  bubble.style.left = Math.random() * 100 + "vw";
+  bubble.style.animationDuration = Math.random() * 5 + 5 + "s";
+
+  document.body.appendChild(bubble);
+
+  setTimeout(() => {
+    bubble.remove();
+  }, 10000);
+}
+
+setInterval(buatBubble, 300);
+</script>
+
+</body>
+</html>
